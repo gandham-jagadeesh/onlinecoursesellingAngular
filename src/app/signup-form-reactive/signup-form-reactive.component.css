@@ -1,0 +1,8 @@
+#signupform{
+    display: flex;
+    flex-direction: column;
+}
+
+.signuperror{
+    color:red;
+}

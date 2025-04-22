@@ -1,0 +1,28 @@
+
+<p>sign up</p>
+<form id="loginform" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    <input type="email" formControlName="email" placeholder="email"/>
+    @if(loginForm.get('email')?.touched && loginForm.get('email')?.invalid){
+        @if(loginForm.get('email')?.errors?.['required']){
+            <span>email is required</span>
+        }
+        @if(loginForm.get('email')?.errors?.['email']){
+            <span>invalid gmail format</span>
+        }
+    }
+    <input type="password" formControlName="password" placeholder="password"/>
+    @if(loginForm.get('password')?.touched && loginForm.get('password')?.invalid){
+        @if(loginForm.get('password')?.errors?.['required']){
+            <span>enter your password</span>
+        }
+        @if(loginForm.get('password')?.errors?.['minlength']){
+            <span>at least 7 characters you must enter</span>
+        }
+    }
+    <select formControlName="role">
+        <option value="student">student</option>
+        <option value="instructor">instructor</option>
+    </select>
+    <button type="submit" [disabled]="loginForm.invalid">submit</button>
+</form>

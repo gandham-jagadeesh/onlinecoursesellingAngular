@@ -1,0 +1,33 @@
+<p>signup-form-reactive works!</p>
+
+<form id="signupform" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="email" placeholder="email">
+    @if(loginForm.get('email')?.touched && loginForm.get('email')?.invalid){
+        @if(loginForm.get('email')?.errors?.['required']){
+            <span class="signuperror">email is required</span>
+        }
+        @if(loginForm.get('email')?.errors?.['email']){
+            <span class="signuperror" >invalid gmail format</span>
+        }
+    }
+    <input type="text" type="password" placeholder="password" formControlName="password">
+    @if(loginForm.get('password')?.touched && loginForm.get('password')?.invalid){
+        @if(loginForm.get('password')?.errors?.['required']){
+            <span class="signuperror">password is required</span>
+        }
+        @if(loginForm.get('password')?.errors?.['minlength']){
+            <span class="signuperror"> at least 7 characters you must enter</span>
+        }
+    }
+    <input type="text" type="password" formControlName="confirmPassword" placeholder="re-enter password">
+    @if(loginForm.get('confirmPassword')?.touched && loginForm.get('confirmPassword')?.invalid){
+        @if(loginForm.get('confirmPassword')?.errors?.['required']){
+            <span class="signuperror">confirm password is required</span>
+        }
+        @if(loginForm.get('confirmPassword')?.errors?.['mismatch']){
+            <span class="signuperror">password mismatch type again</span>
+        }
+    }
+
+    <button type="submit" [disabled]="loginForm.invalid">submit</button>
+</form>
