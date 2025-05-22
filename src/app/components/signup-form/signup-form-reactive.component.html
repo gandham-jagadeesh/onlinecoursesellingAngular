@@ -1,4 +1,4 @@
-<p>signup-form-reactive works!</p>
+<p>register form</p>
 
 <form id="signupform" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <input type="text" formControlName="email" placeholder="email">
@@ -29,5 +29,13 @@
         }
     }
 
+    <select formControlName="role">
+        <option value="student">student</option>
+        <option value="instructor">instructor</option>
+    </select>
+
     <button type="submit" [disabled]="loginForm.invalid">submit</button>
+    @if(isRegister){
+    <span class="signupsuccess">user registered sucessfully </span>
+    }
 </form>

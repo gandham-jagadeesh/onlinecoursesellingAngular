@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { UserRole } from '../signup-form/signup-form-reactive.component';
 
 interface user{
   email:string,
   password:string;
-  role:"student"|"instructor";
+  role:UserRole
 }
 
 @Component({
@@ -19,7 +20,6 @@ export class LoginFormReactiveComponent {
   loginForm:FormGroup = new FormGroup({
     email:new FormControl('',[Validators.required,Validators.email]),
     password:new FormControl('',[Validators.required,Validators.minLength(7)]),
-    role:new FormControl('student',[Validators.required])
   });
 
 

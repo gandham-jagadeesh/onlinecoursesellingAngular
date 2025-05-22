@@ -1,14 +1,12 @@
 import { Routes } from '@angular/router';
-import { ParentComponent } from './parent/parent.component';
-import { ChildaComponent } from './childa/childa.component';
-import { ChildbComponent } from './childb/childb.component';
-import { LoginFormReactiveComponent } from './login-form-reactive/login-form-reactive.component';
-import { SignupFormReactiveComponent } from './signup-form-reactive/signup-form-reactive.component';
+
+import { LoginFormReactiveComponent } from './components/login-form/login-form-reactive.component'
+import { SignupFormReactiveComponent } from './components/signup-form/signup-form-reactive.component';
 
 export const routes: Routes = [
     {
         path:'',
-        redirectTo:'/login',
+        redirectTo:'/signup',
         pathMatch:"full"    
     },
     {
