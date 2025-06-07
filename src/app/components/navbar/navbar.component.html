@@ -1,0 +1,7 @@
+
+<nav>
+    @if(user$ | async; as user){
+        <div>{{user.email}}</div>
+        <button (click)="logout()">logout</button>
+    }
+</nav>

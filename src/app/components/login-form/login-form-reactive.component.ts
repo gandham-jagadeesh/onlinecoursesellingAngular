@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { UserRole } from '../signup-form/signup-form-reactive.component';
-
-interface user{
-  email:string,
-  password:string;
-  role:UserRole
-}
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-login-form-reactive',
@@ -15,7 +11,10 @@ interface user{
   styleUrl: './login-form-reactive.component.css'
 })
 export class LoginFormReactiveComponent {
-  users:user[]=[];
+
+  constructor(private readonly router:Router,private readonly authService:AuthService,private readonly userService:UserService){
+
+  }
 
   loginForm:FormGroup = new FormGroup({
     email:new FormControl('',[Validators.required,Validators.email]),
@@ -25,8 +24,15 @@ export class LoginFormReactiveComponent {
 
   onSubmit(){
     if(this.loginForm.valid){
-      this.users.push(this.loginForm.value);
-      console.log(this.users);
+      this.authService.login(this.loginForm.value).subscribe({
+        next:(res)=>{
+          this.userService.setUser(res.user);
+          this.router.navigateByUrl('/navbar');
+        },
+        error:(err)=>{
+          console.log(err);
+        }
+      })
     }
     else{
       this.loginForm.markAllAsTouched();
