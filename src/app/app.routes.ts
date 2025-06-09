@@ -5,6 +5,7 @@ import { SignupFormReactiveComponent } from './components/signup-form/signup-for
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { authGuard } from './guards/auth.guard';
 import { ErrorComponentComponent } from './components/error-component/error-component.component';
+import { InstructorComponent } from './components/instructor/instructor.component';
 
 export const routes: Routes = [
     {
@@ -23,7 +24,12 @@ export const routes: Routes = [
         path:'navbar',
         component:NavbarComponent,
         canActivate:[authGuard]
-    },{
+    },
+    {
+    path:'instructor',
+    component:InstructorComponent
+  },
+    {
         path:'**',
         component:ErrorComponentComponent 
     }

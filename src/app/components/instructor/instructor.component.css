@@ -1,0 +1,38 @@
+
+.instructor-navbar{
+    display: flex;
+    background-color: black;
+    color:white;
+    height: 60px;
+    font-family:'Times New Roman', Times, serif;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.left-links a{
+    margin: 0 20px;
+}
+
+.right-links a {
+    margin: 0 20px;;
+}
+
+.left-links a:hover{
+    color: 	#999999;
+}
+
+.right-links a:hover{
+    color: #999999;
+}
+
+.left-links{
+    display: flex;
+    margin-left: 20px;
+}
+
+.right-links{
+    display: flex;
+    margin-right: 10px;
+}

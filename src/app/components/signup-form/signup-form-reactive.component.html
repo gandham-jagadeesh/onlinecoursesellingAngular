@@ -1,5 +1,6 @@
 <p>register form</p>
-
+<div class="signupform">
+<div class="card">
 <form id="signupform" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <input type="text" formControlName="email" placeholder="email">
     @if(loginForm.get('email')?.touched && loginForm.get('email')?.invalid){
@@ -35,7 +36,10 @@
     </select>
 
     <button type="submit" [disabled]="loginForm.invalid">submit</button>
+    <button type="button" (click)="loginPage()">login</button>
     @if(isRegister){
     <span class="signupsuccess">user registered sucessfully </span>
     }
 </form>
+</div>
+</div>

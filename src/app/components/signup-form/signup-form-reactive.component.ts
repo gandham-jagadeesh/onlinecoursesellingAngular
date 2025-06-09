@@ -55,7 +55,8 @@ export class SignupFormReactiveComponent {
 
   }
 
- 
-
+ loginPage(){
+  this.router.navigate(['./login']);
+ }
 }
 
