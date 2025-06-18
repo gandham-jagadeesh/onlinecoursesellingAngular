@@ -11,12 +11,17 @@
     padding-right: 10px;
 }
 
+.instructor-navbar a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .left-links a{
     margin: 0 20px;
 }
 
 .right-links a {
-    margin: 0 20px;;
+    margin: 0 20px;
 }
 
 .left-links a:hover{
@@ -36,3 +41,4 @@
     display: flex;
     margin-right: 10px;
 }
+

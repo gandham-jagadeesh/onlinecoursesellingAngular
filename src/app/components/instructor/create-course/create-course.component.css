@@ -1,0 +1,25 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat:wght@600;700&display=swap');
+
+
+
+.create-course-container{
+    padding-top: 20px;
+    font-family:'Times New Roman, Times, serif';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#course-title{
+    padding: 14px;
+    width: 50%;
+   border: solid 1px;
+   outline: none;
+   
+}
+
+#course-title:focus{
+
+}

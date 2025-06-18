@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
+import { CreateCourseComponent } from "./create-course/create-course.component";
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-instructor',
-  imports: [],
+  imports: [RouterLink,RouterOutlet
+    
+  ],
   templateUrl: './instructor.component.html',
   styleUrl: './instructor.component.css'
 })
