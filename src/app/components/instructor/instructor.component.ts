@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CreateCourseComponent } from "./create-course/create-course.component";
+import { Component, inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
@@ -10,6 +10,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   templateUrl: './instructor.component.html',
   styleUrl: './instructor.component.css'
 })
-export class InstructorComponent {
+export class InstructorComponent{
+  
 
 }
