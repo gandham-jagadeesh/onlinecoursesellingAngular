@@ -12,6 +12,7 @@ export class CourseCurriculumComponent implements OnInit{
   
   courseTitle:string = "";
   section:FormGroup[] = [];
+  courseCreated:boolean = false;
 
   fb:FormBuilder = inject(FormBuilder);
   courseForm!:FormGroup;
@@ -26,7 +27,9 @@ export class CourseCurriculumComponent implements OnInit{
 
 
   addCourse(status:string){
-    console.log(status);
+    //call course status and loads in the fb as here id can be null right
+    this.courseCreated=true;
+    this.courseTitle=this.courseForm.get('title')?.value;
   }
 
   addSection(){
@@ -41,14 +44,5 @@ export class CourseCurriculumComponent implements OnInit{
     return this.courseForm.get('sections') as FormArray;
   }
   
-  addLecture(){
-
-  }
-
-  addResource(){
-
-  }
-
-
 
 }

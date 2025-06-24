@@ -1,3 +1,11 @@
 <div>
-    <app-create-course [courseTitleFormGroup]="courseForm" (courseTitleEventEmitter)="addCourse($event)"/>
+    @if(!courseCreated){
+        <app-create-course [courseTitleFormGroup]="courseForm" (courseTitleEventEmitter)="addCourse($event)"/>
+    }
+    @else {
+        <div class="course-curriculum-container">
+       <div class="created-course-container">{{courseTitle}}</div>
+       <button class="create-section">section</button>
+    </div>
+    }
 </div>

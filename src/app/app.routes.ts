@@ -6,7 +6,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { authGuard } from './guards/auth.guard';
 import { ErrorComponentComponent } from './components/error-component/error-component.component';
 import { InstructorComponent } from './components/instructor/instructor.component';
-import { Component } from '@angular/core';
 import { CourseCurriculumComponent } from './components/instructor/course-curriculum/course-curriculum.component';
 
 export const routes: Routes = [
