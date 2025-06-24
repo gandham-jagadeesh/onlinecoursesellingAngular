@@ -1,13 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { CourseLectureComponent } from '../course-lecture/course-lecture.component';
-import { CourseSectionComponent } from '../course-section/course-section.component';
 import { CreateCourseComponent } from '../create-course/create-course.component';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-course-curriculum',
-  imports: [],
+  imports: [CreateCourseComponent,CreateCourseComponent],
   templateUrl: './course-curriculum.component.html',
   styleUrl: './course-curriculum.component.css'
 })
@@ -20,16 +17,16 @@ export class CourseCurriculumComponent implements OnInit{
   courseForm!:FormGroup;
   
   ngOnInit(): void {
-    console.log("initalizing when the component is loading");
     this.courseForm = this.fb.group({
-      title: ["",Validators.required],
+      id:null,
+      title: ["",[Validators.required,Validators.minLength(10)]],
       sections:this.fb.array([])
-    })
+    });
   }
 
 
-  addCourse(){
-
+  addCourse(status:string){
+    console.log(status);
   }
 
   addSection(){

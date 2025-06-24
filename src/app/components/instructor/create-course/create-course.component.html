@@ -1,4 +1,16 @@
 
 <div class="create-course-container">
-    
+    <form class="create-course-form" [formGroup]="courseTitleFormGroup">
+        <input type="text" id="course-title" placeholder="course title" formControlName="title"/>
+        @if(title?.touched && title?.invalid){
+          @if(title?.errors?.['minlength']){
+            <span class="course-form-error">at least 10 characters should be there</span>
+          }
+          @else {
+            <span class="course-form-error">Title is Required</span>
+          }
+        }
+
+        <button type="button" id="course-title-button" [disabled]="title?.invalid" (click)="handleCreate()">create</button>
+    </form>
 </div>
