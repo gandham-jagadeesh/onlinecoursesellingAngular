@@ -1,11 +1,15 @@
-<div>
+
     @if(!courseCreated){
         <app-create-course [courseTitleFormGroup]="courseForm" (courseTitleEventEmitter)="addCourse($event)"/>
     }
     @else {
         <div class="course-curriculum-container">
        <div class="created-course-container">{{courseTitle}}</div>
-       <button class="create-section">section</button>
+       <button class="create-section" (click)="addSection()">section</button>
+    </div>
+    <div formArrayName="sections" class="course-section-container"> 
+        <ng-container *ngFor="let sectionGroup of Sections; let i = index">
+            <app-course-section [sectionFormGroup]="sectionGroup"/>
+        </ng-container>   
     </div>
     }
-</div>
