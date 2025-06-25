@@ -1,0 +1,27 @@
+.create-section-container{
+   margin-top: 10px;
+   display: flex;
+   border: 2px solid;
+   margin: 10px;
+   background-color: #e0e0e0;
+   padding: 50px;
+}
+
+
+.create-section-form{
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+}
+
+
+.create-section-form input{
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.create-section-form  button{
+    padding: 5px;
+    margin-left: 10px;
+
+}

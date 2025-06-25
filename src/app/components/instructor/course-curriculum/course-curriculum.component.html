@@ -4,12 +4,13 @@
     }
     @else {
         <div class="course-curriculum-container">
-       <div class="created-course-container">{{courseTitle}}</div>
-       <button class="create-section" (click)="addSection()">section</button>
+       <div class="created-course-container">CourseTitle: {{courseTitle}}</div>
+       <button class="create-section" (click)="addSection()">Add section</button>
     </div>
+
     <div formArrayName="sections" class="course-section-container"> 
         <ng-container *ngFor="let sectionGroup of Sections; let i = index">
-            <app-course-section [sectionFormGroup]="sectionGroup"/>
+            <app-course-section [sectionFormGroup]="sectionGroup" [index]="i" (removeSectionEmitter)="removeSection($event)"/>
         </ng-container>   
     </div>
-    }
+}

@@ -1,5 +1,23 @@
 
-<form [formGroup]="sectionFormGroup">
-    <input formcontrolName="sectionTitle" placeholder="add section"/>
-    <button>Add section</button>
+<div class="create-section-container">
+@if(!sectionCreated){
+    <form class="create-section-form" [formGroup]="sectionFormGroup">
+    <input type="text" formControlName="sectionTitle" placeholder="section title" id="create-section"/>
+    <button type="button" (click)="handleSection()">save Section</button>
+            <button class="delete-course-container" (click)="handleRemove()">Cancel Section</button>
 </form>
+}
+@else {
+    <div class="edit-section-container">
+    <div class="sectionTitleHeading">Section:{{index+1.}}{{sectionTitle}}</div>
+    <button type="button" (click)="handleEdit()">edit Section</button>
+    <button type="button" (click)="AddLecture()">Create Lecture</button>
+    <div class="create-lecture-container">
+    <ng-container *ngFor="let lectureGroup of Lectures, let i=index">
+        <app-course-lecture [lectureFormComponent]="lectureGroup" [index]="i"/>
+    </ng-container>
+</div>
+    </div>
+}
+</div>
+

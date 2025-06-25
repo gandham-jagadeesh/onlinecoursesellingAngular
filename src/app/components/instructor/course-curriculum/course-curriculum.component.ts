@@ -20,7 +20,7 @@ export class CourseCurriculumComponent implements OnInit{
   
   ngOnInit(): void {
     this.courseForm = this.fb.group({
-      id:null,
+      titleid:null,
       title: ["",[Validators.required,Validators.minLength(10)]],
       sections:this.fb.array([])
     });
@@ -36,10 +36,15 @@ export class CourseCurriculumComponent implements OnInit{
 
   addSection(){
     const sectionGroup = this.fb.group({
+      sectionid:this.fb.control(null),
       sectionTitle:this.fb.control("",[Validators.required]),
       lectures:this.fb.array([])
     });
     this.Sections.push(sectionGroup);
+  }
+
+  removeSection(index:number){
+    this.Sections.splice(index,1);
   }
 
   get Sections(){

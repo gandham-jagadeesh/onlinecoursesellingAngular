@@ -1,1 +1,8 @@
-<p>course-lecture works!</p>
+
+<div class="create-lecture-container">
+    <form [formGroup]="lectureFormComponent">
+        <input type="text" formControlName="lecturetitle" placeholder="enter Lecture Title"/>
+        <button type="button">save lecture</button>
+        <button type="button">cancel lecture </button>
+    </form>
+</div>
